@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.face-container {
+    position: relative;
+    width: 400px; /* adjust image size */
+    height: auto;
+  }
+  
+  .face {
+    width: 100%;
+    display: block;
+  }
+  
+  .eyes {
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    /* ^ adjust eye position */
+    width: 40%;
+    height: 30%;
+    /* ^ adjust eye spacing */
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .eye {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    /* ^ adjust eye size */
+    border-radius: 50%;
+    /* background-color: white; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .pupil {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    /* ^ adjust pupil image size */
+  }
+  
