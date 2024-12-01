@@ -2,6 +2,8 @@
 
 const txtBtn = document.getElementById('txt-btn');
 const sun = document.getElementById('sun');
+const eyeHighlights = document.getElementById('eye-highlights');
+const factTexts = document.querySelectorAll('.fact-text');
 const redSleep = "/images/red-sleep.png";
 const whiteSleep = "/images/white-sleep.png";
 const redWake = "/images/red-wake.png";
@@ -32,12 +34,22 @@ txtBtn.addEventListener('click', () => {
         txtBtn.src = whiteSleep;
         txtBtn.classList.remove('wake');
         txtBtn.classList.add('sleep');
+        eyeHighlights.classList.remove('hidden');
+        factTexts.forEach(fact => {
+            fact.classList.remove('show');
+        })
+        document.body.style.backgroundColor = '#ba9caf';
         sleep = false;
     } else {
         sun.src = sleepSun;
         txtBtn.src = whiteWake;
         txtBtn.classList.remove('sleep');
         txtBtn.classList.add('wake');
+        eyeHighlights.classList.add('hidden');
+        factTexts.forEach(fact => {
+            fact.classList.add('show');
+        })
+        document.body.style.backgroundColor = '#251f23';
         sleep = true;
     }
 });
@@ -63,7 +75,7 @@ faceContainer.addEventListener('mousemove', (e) => {
     const deltaY = mouseY - eyeCenterY;
 
     const angle = Math.atan2(deltaY, deltaX);
-    const maxDistance = eyeRect.width / 4; // limit movement within the eye
+    const maxDistance = eyeRect.width / 4;
     const distance = Math.min(maxDistance, Math.sqrt(deltaX ** 2 + deltaY ** 2));
 
     const pupil = pupils[index];

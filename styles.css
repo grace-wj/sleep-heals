@@ -1,29 +1,65 @@
 body {
     margin: 0;
     padding: 0;
+    background-color: #ba9caf;
+    transition: background-color 0.3s ease-in-out;
+
+    font-family: "meno-display", serif;
+    font-weight: 400;
+    font-style: normal;
 }
-/* 
-.face-container {
-    position: relative;
-    width: 400px; adjust image size
-    height: auto;
-  }
-  
-  .face {
-    width: 100%;
-    display: block;
-  }
-*/
 
   #page-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    width: 100%;
   }
-
+  #grid-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+  .row {
+    height: 33%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .mid {
+    height: 34%;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+  .top, .bot {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  .text-box {
+    width: 27%;
+    height: 85%;
+    /* background-color: #9c8493; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .top .text-box, .bot .text-box {
+    width: 33%;
+  }
+  .fact-text {
+    font-size: 2vw;
+    text-align: center;
+    color: white;
+    display: none;
+  }
+  .fact-text.show {
+    display: block;
+  }
   #sun-container {
-    position: relative;
+    position: absolute;
     width: 50%;
     padding-bottom: 50%;
   }
@@ -31,6 +67,10 @@ body {
     position: absolute;
     width: 100%;
     z-index: 3;
+    display: block;
+  }
+  #eye-highlights.hidden {
+    display: none;
   }
   #sclera {
     position: absolute;
