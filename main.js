@@ -1,6 +1,53 @@
+/* sleep-wake switching */
+
+const txtBtn = document.getElementById('txt-btn');
+const sun = document.getElementById('sun');
+const redSleep = "/images/red-sleep.png";
+const whiteSleep = "/images/white-sleep.png";
+const redWake = "/images/red-wake.png";
+const whiteWake = "/images/white-wake.png";
+const sleepSun = "/images/sleep-sun.png";
+const wakeSun = "/images/wake-sun.png";
+sleep = false;
+
+txtBtn.addEventListener('mouseenter', () => {
+    if (sleep) {
+        txtBtn.src = whiteWake;
+    } else {
+        txtBtn.src = whiteSleep;
+    }
+});
+
+txtBtn.addEventListener('mouseleave', () => {
+    if (sleep) {
+        txtBtn.src = redWake;
+    } else {
+        txtBtn.src = redSleep;
+    }
+});
+
+txtBtn.addEventListener('click', () => { 
+    if (sleep) {
+        sun.src = wakeSun;
+        txtBtn.src = whiteSleep;
+        txtBtn.classList.remove('wake');
+        txtBtn.classList.add('sleep');
+        sleep = false;
+    } else {
+        sun.src = sleepSun;
+        txtBtn.src = whiteWake;
+        txtBtn.classList.remove('sleep');
+        txtBtn.classList.add('wake');
+        sleep = true;
+    }
+});
+
+
+/* eye tracking */
+
 const pupils = document.querySelectorAll('.pupil');
 const eyes = document.querySelectorAll('.eye');
-const faceContainer = document.querySelector('.face-container');
+const faceContainer = document.getElementById('sun-container');
 
 faceContainer.addEventListener('mousemove', (e) => {
   const rect = faceContainer.getBoundingClientRect();
@@ -16,7 +63,7 @@ faceContainer.addEventListener('mousemove', (e) => {
     const deltaY = mouseY - eyeCenterY;
 
     const angle = Math.atan2(deltaY, deltaX);
-    const maxDistance = eyeRect.width / 4; // Limit movement within the eye
+    const maxDistance = eyeRect.width / 4; // limit movement within the eye
     const distance = Math.min(maxDistance, Math.sqrt(deltaX ** 2 + deltaY ** 2));
 
     const pupil = pupils[index];

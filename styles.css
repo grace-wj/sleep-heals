@@ -2,10 +2,10 @@ body {
     margin: 0;
     padding: 0;
 }
-
+/* 
 .face-container {
     position: relative;
-    width: 400px; /* adjust image size */
+    width: 400px; adjust image size
     height: auto;
   }
   
@@ -13,14 +13,42 @@ body {
     width: 100%;
     display: block;
   }
-  
+*/
+
+  #page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  #sun-container {
+    position: relative;
+    width: 50%;
+    padding-bottom: 50%;
+  }
+  #eye-highlights {
+    position: absolute;
+    width: 100%;
+    z-index: 3;
+  }
+  #sclera {
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+  }
+  #sun {
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+  }
   .eyes {
     position: absolute;
-    top: 40%;
-    left: 30%;
+    top: 48.5%;
+    left: 38%;
     /* ^ adjust eye position */
-    width: 40%;
-    height: 30%;
+    width: 24%;
+    height: 5%;
     /* ^ adjust eye spacing */
     display: flex;
     justify-content: space-between;
@@ -28,11 +56,11 @@ body {
   
   .eye {
     position: relative;
-    width: 50px;
-    height: 50px;
+    width: 29%;
+    /* height: 50px; */
     /* ^ adjust eye size */
     border-radius: 50%;
-    /* background-color: white; */
+    /* background-color: black; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,8 +68,29 @@ body {
   
   .pupil {
     position: absolute;
-    width: 20px;
-    height: 20px;
+    width: 65%;
+    height: 85%;
+    z-index: 1;
     /* ^ adjust pupil image size */
   }
-  
+
+  #txt-btn {
+    position: absolute;
+    width: 21%;
+    top: 34%;
+    left: 40%;
+    z-index: 3;
+  }
+  #txt-btn.sleep {
+    width: 21%;
+    top: 34%;
+    left: 40%;
+  }
+  #txt-btn.wake {
+    width: 19%;
+    top: 34%;
+    left: 40%;
+  }
+  #text-btn.hidden {
+    display: none;
+  }
