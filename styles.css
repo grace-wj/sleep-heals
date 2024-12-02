@@ -10,6 +10,9 @@ body {
 
   cursor: url('/images/cursor-green.png') 2 2, auto;
 }
+a {
+  cursor: url('/images/glove-cursor-1.png') 2 2, auto;
+}
 #page-container {
   display: flex;
   justify-content: center;
@@ -53,20 +56,39 @@ body {
   align-items: center;
   justify-content: center;
 }
+.text-box a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .top .text-box, .bot .text-box {
   width: 33%;
 }
-.fact-text {
-  font-size: 2.5vw;
-  text-decoration: none;
-  text-align: center;
-  color: white;
+.text-img {
   transition: opacity 0.2s ease-in-out;
   opacity: 0;
-  z-index: 3;
+  display: none;
+  z-index: 4;
+  width: 70%;
 }
-.fact-text.show {
+.text-img.show {
   opacity: 0.8;
+  display: block;
+}
+#focus {
+  width: 67%;
+}
+#immunity {
+  width: 87%;
+}
+#creativity {
+  width: 75%;
+}
+#memory {
+  width: 65%;
+}
+#metabolism {
+  width: 82%;
 }
 #sun-container {
   position: absolute;

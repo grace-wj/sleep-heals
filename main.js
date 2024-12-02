@@ -20,15 +20,41 @@ function loopSun() {
     sunIndex = (sunIndex + 1) % sunImgs.length;
     sun.src = sunImgs[sunIndex];
 }
+const emotionsImgs = ["/images/emotions-1.png", "/images/emotions-2.png"];
+const immunityImgs = ["/images/immunity-1.png", "/images/immunity-2.png"];
+const memoryImgs = ["/images/memory-1.png", "/images/memory-2.png"];
+const metabolismImgs = ["/images/metabolism-1.png", "/images/metabolism-2.png"];
+const focusImgs = ["/images/focus-1.png", "/images/focus-2.png"];
+const creativityImgs = ["/images/creativity-1.png", "/images/creativity-2.png"];
+
+const emotions = document.getElementById('emotions');
+const immunity = document.getElementById('immunity');
+const memory = document.getElementById('memory');
+const metabolism = document.getElementById('metabolism');
+const focusImg = document.getElementById('focus');
+const creativity = document.getElementById('creativity');
+
+let textIndex = 0;
+
+function loopText() {
+    textIndex = (textIndex + 1) % 2;
+    emotions.src = emotionsImgs[textIndex];
+    immunity.src = immunityImgs[textIndex];
+    memory.src = memoryImgs[textIndex];
+    metabolism.src = metabolismImgs[textIndex];
+    focusImg.src = focusImgs[textIndex];
+    creativity.src = creativityImgs[textIndex];
+}
 
 let backgroundInterval = setInterval(loopBackground, 150);
 setInterval(loopSun, 150);
+setInterval(loopText, 150);
 
 /* sleep-wake switching */
 
 const txtBtn = document.getElementById('txt-btn');
+const textImgs = document.querySelectorAll('.text-img');
 const eyeHighlights = document.getElementById('eye-highlights');
-const factTexts = document.querySelectorAll('.fact-text');
 const redSleep = "/images/red-sleep.png";
 const whiteSleep = "/images/white-sleep.png";
 const redWake = "/images/red-wake.png";
@@ -59,9 +85,9 @@ txtBtn.addEventListener('click', () => {
         txtBtn.classList.remove('wake');
         txtBtn.classList.add('sleep');
         eyeHighlights.classList.remove('hidden');
-        factTexts.forEach(fact => {
-            fact.classList.remove('show');
-        })
+        textImgs.forEach(img => {
+            img.classList.remove('show');
+        });
         clearInterval(backgroundInterval);
         background.style.opacity = 0;
         document.body.style.backgroundColor = '#826f7b';
@@ -80,9 +106,9 @@ txtBtn.addEventListener('click', () => {
         txtBtn.classList.remove('sleep');
         txtBtn.classList.add('wake');
         eyeHighlights.classList.add('hidden');
-        factTexts.forEach(fact => {
-            fact.classList.add('show');
-        })
+        textImgs.forEach(img => {
+            img.classList.add('show');
+        });
         clearInterval(backgroundInterval);
         background.style.opacity = 0;
         document.body.style.backgroundColor = '#251f23';
