@@ -7,6 +7,8 @@ body {
   font-family: "meno-display", serif;
   font-weight: 400;
   font-style: normal;
+
+  cursor: url('/images/cursor-green.png') 2 2, auto;
 }
 #page-container {
   display: flex;
@@ -55,14 +57,16 @@ body {
   width: 33%;
 }
 .fact-text {
-  font-size: 1.8vw;
+  font-size: 2.5vw;
+  text-decoration: none;
   text-align: center;
   color: white;
   transition: opacity 0.2s ease-in-out;
   opacity: 0;
+  z-index: 3;
 }
 .fact-text.show {
-  opacity: 1;
+  opacity: 0.8;
 }
 #sun-container {
   position: absolute;

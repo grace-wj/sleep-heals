@@ -1,22 +1,24 @@
 /* background noise effect */
+
 const lightBackgrounds = ["/images/noise-light-1.jpg", "/images/noise-light-2.jpg", "/images/noise-light-3.jpg", "/images/noise-light-4.jpg"];
 const darkBackgrounds = ["/images/noise-dark-1.jpg", "/images/noise-dark-2.jpg", "/images/noise-dark-3.jpg", "/images/noise-dark-4.jpg"];
 let backgroundImgs = lightBackgrounds;
-let loopIndex = 0;
+let backgroundIndex = 0;
 const background = document.getElementById('background-img');
 
 const wakeSunImgs = ["/images/noise-wake-sun-1.png", "/images/noise-wake-sun-2.png", "/images/noise-wake-sun-3.png"];
 const sleepSunImgs = ["/images/noise-sleep-sun-1.png", "/images/noise-sleep-sun-2.png", "/images/noise-sleep-sun-3.png"];
 let sunImgs = wakeSunImgs;
+let sunIndex = 0;
 const sun = document.getElementById('sun');
 
 function loopBackground() {
-    loopIndex = (loopIndex + 1) % backgroundImgs.length;
-    background.src = backgroundImgs[loopIndex];
+    backgroundIndex = (backgroundIndex + 1) % backgroundImgs.length;
+    background.src = backgroundImgs[backgroundIndex];
 }
 function loopSun() {
-    loopIndex = (loopIndex + 1) % sunImgs.length;
-    sun.src = sunImgs[loopIndex];
+    sunIndex = (sunIndex + 1) % sunImgs.length;
+    sun.src = sunImgs[sunIndex];
 }
 
 let backgroundInterval = setInterval(loopBackground, 150);
@@ -87,14 +89,13 @@ txtBtn.addEventListener('click', () => {
         setTimeout(() => {
             backgroundImgs = darkBackgrounds;
             background.src = "/images/noise-dark-1.jpg";
-            backgroundInterval = setInterval(loopBackground, 150);
+            backgroundInterval = setInterval(loopBackground, 175);
             background.style.opacity = 1;
         }, 300);
 
         sleep = true;
     }
 });
-
 
 /* eye tracking */
 
