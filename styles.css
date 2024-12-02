@@ -1,133 +1,130 @@
 body {
-    margin: 0;
-    padding: 0;
-    background-color: #ba9caf;
-    transition: background-color 0.3s ease-in-out;
+  margin: 0;
+  padding: 0;
+  background-color: #826f7b;
+  transition: background-color 0.3s ease-in-out;
 
-    font-family: "meno-display", serif;
-    font-weight: 400;
-    font-style: normal;
+  font-family: "meno-display", serif;
+  font-weight: 400;
+  font-style: normal;
 }
-
-  #page-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100%;
-  }
-  #grid-container {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-  }
-  .row {
-    height: 33%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .mid {
-    height: 34%;
-    padding-left: 3%;
-    padding-right: 3%;
-  }
-  .top, .bot {
-    padding-left: 10%;
-    padding-right: 10%;
-  }
-  .text-box {
-    width: 27%;
-    height: 85%;
-    /* background-color: #9c8493; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .top .text-box, .bot .text-box {
-    width: 33%;
-  }
-  .fact-text {
-    font-size: 2vw;
-    text-align: center;
-    color: white;
-    display: none;
-  }
-  .fact-text.show {
-    display: block;
-  }
-  #sun-container {
-    position: absolute;
-    width: 50%;
-    padding-bottom: 50%;
-  }
-  #eye-highlights {
-    position: absolute;
-    width: 100%;
-    z-index: 3;
-    display: block;
-  }
-  #eye-highlights.hidden {
-    display: none;
-  }
-  #sclera {
-    position: absolute;
-    width: 100%;
-    z-index: 0;
-  }
-  #sun {
-    position: absolute;
-    width: 100%;
-    z-index: 2;
-  }
-  .eyes {
-    position: absolute;
-    top: 48.5%;
-    left: 38%;
-    /* ^ adjust eye position */
-    width: 24%;
-    height: 5%;
-    /* ^ adjust eye spacing */
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .eye {
-    position: relative;
-    width: 29%;
-    /* height: 50px; */
-    /* ^ adjust eye size */
-    border-radius: 50%;
-    /* background-color: black; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .pupil {
-    position: absolute;
-    width: 65%;
-    height: 85%;
-    z-index: 1;
-    /* ^ adjust pupil image size */
-  }
-
-  #txt-btn {
-    position: absolute;
-    width: 21%;
-    top: 34%;
-    left: 40%;
-    z-index: 3;
-  }
-  #txt-btn.sleep {
-    width: 21%;
-    top: 34%;
-    left: 40%;
-  }
-  #txt-btn.wake {
-    width: 19%;
-    top: 34%;
-    left: 40%;
-  }
+#page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+#background-img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 1;
+}
+#grid-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+.row {
+  height: 33%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.mid {
+  height: 34%;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+.top, .bot {
+  padding-left: 8%;
+  padding-right: 8%;
+}
+.text-box {
+  width: 27%;
+  height: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.top .text-box, .bot .text-box {
+  width: 33%;
+}
+.fact-text {
+  font-size: 1.8vw;
+  text-align: center;
+  color: white;
+  transition: opacity 0.2s ease-in-out;
+  opacity: 0;
+}
+.fact-text.show {
+  opacity: 1;
+}
+#sun-container {
+  position: absolute;
+  width: 50%;
+  padding-bottom: 50%;
+}
+#eye-highlights {
+  position: absolute;
+  width: 100%;
+  z-index: 3;
+  display: block;
+}
+#eye-highlights.hidden {
+  display: none;
+}
+#sclera {
+  position: absolute;
+  width: 100%;
+  z-index: 0;
+}
+#sun {
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+}
+.eyes {
+  position: absolute;
+  top: 48.5%;
+  left: 38%;
+  width: 24%;
+  height: 5%;
+  display: flex;
+  justify-content: space-between;
+}
+.eye {
+  position: relative;
+  width: 29%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pupil {
+  position: absolute;
+  width: 65%;
+  height: 85%;
+  z-index: 1;
+}
+#txt-btn {
+  position: absolute;
+  width: 21%;
+  top: 34%;
+  left: 40%;
+  z-index: 3;
+}
+#txt-btn.sleep {
+  width: 21%;
+  top: 34%;
+  left: 40%;
+}
+#txt-btn.wake {
+  width: 19%;
+  top: 34%;
+  left: 40%;
+}
