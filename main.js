@@ -6,7 +6,7 @@ let backgroundImgs = lightBackgrounds;
 let backgroundIndex = 0;
 const background = document.getElementById('background-img');
 
-const wakeSunImgs = ["/images/noise-wake-sun-1.png", "/images/noise-wake-sun-2.png", "/images/noise-wake-sun-3.png"];
+const wakeSunImgs = ["/images/sun-separate-1.png", "/images/sun-separate-2.png", "/images/sun-separate-3.png"]
 const sleepSunImgs = ["/images/noise-sleep-sun-1.png", "/images/noise-sleep-sun-2.png", "/images/noise-sleep-sun-3.png"];
 let sunImgs = wakeSunImgs;
 let sunIndex = 0;
@@ -20,12 +20,12 @@ function loopSun() {
     sunIndex = (sunIndex + 1) % sunImgs.length;
     sun.src = sunImgs[sunIndex];
 }
-const emotionsImgs = ["/images/emotions-1.png", "/images/emotions-2.png"];
-const immunityImgs = ["/images/immunity-1.png", "/images/immunity-2.png"];
-const memoryImgs = ["/images/memory-1.png", "/images/memory-2.png"];
-const metabolismImgs = ["/images/metabolism-1.png", "/images/metabolism-2.png"];
-const focusImgs = ["/images/focus-1.png", "/images/focus-2.png"];
-const creativityImgs = ["/images/creativity-1.png", "/images/creativity-2.png"];
+const emotionsImgs = ["/images/emotions-1.png", "/images/emotions-2.png", "/images/emotions-3.png"];
+const immunityImgs = ["/images/immunity-1.png", "/images/immunity-2.png", "/images/immunity-3.png"];
+const memoryImgs = ["/images/memory-1.png", "/images/memory-2.png", "/images/memory-3.png"];
+const metabolismImgs = ["/images/metabolism-1.png", "/images/metabolism-2.png", "/images/metabolism-3.png"];
+const focusImgs = ["/images/focus-1.png", "/images/focus-2.png", "/images/focus-3.png"];
+const creativityImgs = ["/images/creativity-1.png", "/images/creativity-2.png", "/images/creativity-3.png"];
 
 const emotions = document.getElementById('emotions');
 const immunity = document.getElementById('immunity');
@@ -33,11 +33,10 @@ const memory = document.getElementById('memory');
 const metabolism = document.getElementById('metabolism');
 const focusImg = document.getElementById('focus');
 const creativity = document.getElementById('creativity');
-
 let textIndex = 0;
 
 function loopText() {
-    textIndex = (textIndex + 1) % 2;
+    textIndex = (textIndex + 1) % 3;
     emotions.src = emotionsImgs[textIndex];
     immunity.src = immunityImgs[textIndex];
     memory.src = memoryImgs[textIndex];
@@ -46,9 +45,34 @@ function loopText() {
     creativity.src = creativityImgs[textIndex];
 }
 
+const leftHandImgs = ["/images/left-hand-1.png", "/images/left-hand-2.png", "/images/left-hand-3.png"];
+const rightHandImgs = ["/images/right-hand-1.png", "/images/right-hand-2.png", "/images/right-hand-3.png"];
+
+const leftHand = document.getElementById('left-hand');
+const rightHand = document.getElementById('right-hand');
+let handIndex = 0;
+
+function loopHands() {
+    handIndex = (handIndex + 1) % 3;
+    leftHand.src = leftHandImgs[handIndex];
+    rightHand.src = rightHandImgs[handIndex];
+}
+
+const sleepHealsImgs = ["/images/sleep-heals-1.png", "/images/sleep-heals-2.png"];
+
+const sleepHeals = document.getElementById('sleep-heals');
+let sleepHealsIndex = 0;
+
+function loopSleepHeals() {
+    sleepHealsIndex = (sleepHealsIndex + 1) % sleepHealsImgs.length;
+    sleepHeals.src = sleepHealsImgs[sleepHealsIndex];
+}
+
 let backgroundInterval = setInterval(loopBackground, 150);
 setInterval(loopSun, 150);
 setInterval(loopText, 150);
+setInterval(loopHands, 150);
+setInterval(loopSleepHeals, 150);
 
 /* sleep-wake switching */
 
@@ -85,6 +109,10 @@ txtBtn.addEventListener('click', () => {
         txtBtn.classList.remove('wake');
         txtBtn.classList.add('sleep');
         eyeHighlights.classList.remove('hidden');
+        rightHand.classList.remove('hidden');
+        leftHand.classList.remove('hidden');
+        sleepHeals.style.visibility = 'visible';
+        sleepHeals.style.opacity = 1;
         textImgs.forEach(img => {
             img.classList.remove('show');
         });
@@ -106,9 +134,17 @@ txtBtn.addEventListener('click', () => {
         txtBtn.classList.remove('sleep');
         txtBtn.classList.add('wake');
         eyeHighlights.classList.add('hidden');
-        textImgs.forEach(img => {
-            img.classList.add('show');
-        });
+        rightHand.classList.add('hidden');
+        leftHand.classList.add('hidden');
+        sleepHeals.style.opacity = 0;
+        setTimeout(() => {
+            sleepHeals.style.visibility = 'hidden';
+        }, 500);
+        setTimeout(() => {
+            textImgs.forEach(img => {
+                img.classList.add('show');
+            });
+        }, 300);
         clearInterval(backgroundInterval);
         background.style.opacity = 0;
         document.body.style.backgroundColor = '#251f23';
@@ -127,10 +163,10 @@ txtBtn.addEventListener('click', () => {
 
 const pupils = document.querySelectorAll('.pupil');
 const eyes = document.querySelectorAll('.eye');
-const faceContainer = document.getElementById('sun-container');
+const pageContainer = document.getElementById('page-container');
 
-faceContainer.addEventListener('mousemove', (e) => {
-  const rect = faceContainer.getBoundingClientRect();
+pageContainer.addEventListener('mousemove', (e) => {
+  const rect = pageContainer.getBoundingClientRect();
   const mouseX = e.clientX - rect.left;
   const mouseY = e.clientY - rect.top;
 

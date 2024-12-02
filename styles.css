@@ -27,6 +27,19 @@ a {
   transition: opacity 0.3s ease-in-out;
   opacity: 1;
 }
+#sleep-heals {
+  position: absolute;
+  /* top: 3%; */
+  top: -6%;
+  /* width: 45%; */
+  height: 42%;
+  z-index: 10;
+  transition: opacity 0.5s ease-in-out;
+  opacity: 1;
+}
+/* #sleep-heals.hidden {
+  opacity: 0;
+} */
 #grid-container {
   display: flex;
   flex-direction: column;
@@ -45,9 +58,13 @@ a {
   padding-left: 2%;
   padding-right: 2%;
 }
-.top, .bot {
-  padding-left: 8%;
-  padding-right: 8%;
+.top {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+.bot {
+  padding-left: 5%;
+  padding-right: 5%;
 }
 .text-box {
   width: 27%;
@@ -65,21 +82,21 @@ a {
   width: 33%;
 }
 .text-img {
-  transition: opacity 0.2s ease-in-out;
+  transition: opacity 1.5s ease-in-out;
   opacity: 0;
-  display: none;
+  visibility: hidden;
   z-index: 4;
   width: 70%;
 }
 .text-img.show {
   opacity: 0.8;
-  display: block;
+  visibility: visible;
 }
 #focus {
-  width: 67%;
+  width: 65%;
 }
 #immunity {
-  width: 87%;
+  width: 83%;
 }
 #creativity {
   width: 75%;
@@ -88,9 +105,10 @@ a {
   width: 65%;
 }
 #metabolism {
-  width: 82%;
+  width: 78%;
 }
 #sun-container {
+  margin-top: 5%;
   position: absolute;
   width: 50%;
   padding-bottom: 50%;
@@ -109,10 +127,44 @@ a {
   width: 100%;
   z-index: 0;
 }
+#left-hand {
+  position: absolute;
+  width: 100%;
+  z-index: 5;
+  animation: float-left 2s infinite ease-in-out;
+}
+#left-hand.hidden {
+  display: none;
+}
+#right-hand {
+  position: absolute;
+  width: 100%;
+  z-index: 5;
+  animation: float-right 2s infinite ease-in-out;
+}
+#right-hand.hidden {
+  display: none;
+}
 #sun {
   position: absolute;
   width: 100%;
   z-index: 2;
+
+  /* animation: float 2s infinite ease-in-out; */
+}
+@keyframes float-left {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(3px, -3px); }
+  50% { transform: translate(0, -5px); }
+  75% { transform: translate(-3px, -3px); }
+  100% { transform: translate(0, 0); }
+}
+@keyframes float-right {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-3px, -3px); }
+  50% { transform: translate(0, -5px); }
+  75% { transform: translate(3px, -3px); }
+  100% { transform: translate(0, 0); }
 }
 .eyes {
   position: absolute;
@@ -142,7 +194,7 @@ a {
   width: 21%;
   top: 34%;
   left: 40%;
-  z-index: 3;
+  z-index: 6;
 }
 #txt-btn.sleep {
   width: 21%;
