@@ -134,12 +134,14 @@ txtBtn.addEventListener('click', () => {
         txtBtn.classList.remove('sleep');
         txtBtn.classList.add('wake');
         eyeHighlights.classList.add('hidden');
-        rightHand.classList.add('hidden');
-        leftHand.classList.add('hidden');
         sleepHeals.style.opacity = 0;
         setTimeout(() => {
             sleepHeals.style.visibility = 'hidden';
         }, 500);
+        setTimeout(() => {
+            rightHand.classList.add('hidden');
+            leftHand.classList.add('hidden');
+        }, 10);
         setTimeout(() => {
             textImgs.forEach(img => {
                 img.classList.add('show');
