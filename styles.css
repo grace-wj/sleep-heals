@@ -77,10 +77,11 @@ a {
   align-items: center;
   justify-content: center;
 }
-.text-box a {
+.img-link {
   display: flex;
   align-items: center;
   justify-content: center;
+  pointer-events: none;
 }
 .top .text-box, .bot .text-box {
   width: 33%;

@@ -78,6 +78,7 @@ setInterval(loopSleepHeals, 150);
 
 const txtBtn = document.getElementById('txt-btn');
 const textImgs = document.querySelectorAll('.text-img');
+const textLinks = document.querySelectorAll('.img-link');
 const eyeHighlights = document.getElementById('eye-highlights');
 const redSleep = "/images/red-sleep.png";
 const whiteSleep = "/images/white-sleep.png";
@@ -116,6 +117,9 @@ txtBtn.addEventListener('click', () => {
         textImgs.forEach(img => {
             img.classList.remove('show');
         });
+        textLinks.forEach(link => {
+            link.style.pointerEvents = 'none';
+        });
         clearInterval(backgroundInterval);
         background.style.opacity = 0;
         document.body.style.backgroundColor = '#826f7b';
@@ -145,6 +149,9 @@ txtBtn.addEventListener('click', () => {
         setTimeout(() => {
             textImgs.forEach(img => {
                 img.classList.add('show');
+            });
+            textLinks.forEach(link => {
+                link.style.pointerEvents = 'auto';
             });
         }, 300);
         clearInterval(backgroundInterval);
