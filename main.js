@@ -138,8 +138,12 @@ txtBtn.addEventListener('click', () => {
         txtBtn.classList.remove('wake');
         txtBtn.classList.add('sleep');
         eyeHighlights.classList.remove('hidden');
-        rightHand.classList.remove('hidden');
-        leftHand.classList.remove('hidden');
+        sun.onload = () => {
+            if (!sleep) {
+                rightHand.classList.remove('hidden');
+                leftHand.classList.remove('hidden');
+            }
+        }
         sleepHeals.style.visibility = 'visible';
         sleepHeals.style.opacity = 1;
         textImgs.forEach(img => {
