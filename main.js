@@ -142,10 +142,12 @@ txtBtn.addEventListener('click', () => {
         setTimeout(() => {
             sleepHeals.style.visibility = 'hidden';
         }, 500);
-        setTimeout(() => {
-            rightHand.classList.add('hidden');
-            leftHand.classList.add('hidden');
-        }, 10);
+        sun.onload = () => {
+            if (sleep) {
+                rightHand.classList.add('hidden');
+                leftHand.classList.add('hidden');
+            }
+        }
         setTimeout(() => {
             textImgs.forEach(img => {
                 img.classList.add('show');
