@@ -1,3 +1,31 @@
+window.onload = () => {
+    const imagePaths = [
+        "/images/noise-dark-1.jpg",
+        "/images/noise-dark-2.jpg",
+        "/images/noise-dark-3.jpg",
+        "/images/noise-dark-4.jpg",
+        "/images/noise-sleep-sun-1.png",
+        "/images/noise-sleep-sun-2.png",
+        "/images/noise-sleep-sun-3.png",
+        "/images/sun-separate-1.png",
+        "/images/sun-separate-2.png",
+        "/images/sun-separate-3.png",
+        "/images/right-hand-1.png",
+        "/images/right-hand-2.png",
+        "/images/right-hand-3.png",
+        "/images/left-hand-1.png",
+        "/images/left-hand-2.png",
+        "/images/left-hand-3.png",
+    ];
+
+    imagePaths.forEach((path) => {
+        const img = new Image();
+        img.src = path;
+    });
+
+    console.log('Images preloaded');
+};
+
 /* background noise effect */
 
 const lightBackgrounds = ["/images/noise-light-1.jpg", "/images/noise-light-2.jpg", "/images/noise-light-3.jpg", "/images/noise-light-4.jpg"];
@@ -104,7 +132,7 @@ txtBtn.addEventListener('mouseleave', () => {
 
 txtBtn.addEventListener('click', () => { 
     if (sleep) {
-        sun.src = "/images/noise-wake-sun-1.png";
+        sun.src = "/images/sun-separate-1.png";
         sunImgs = wakeSunImgs;
         txtBtn.src = whiteSleep;
         txtBtn.classList.remove('wake');
