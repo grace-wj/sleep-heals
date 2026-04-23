@@ -1,21 +1,21 @@
 window.onload = () => {
     const imagePaths = [
-        "/images/noise-dark-1.jpg",
-        "/images/noise-dark-2.jpg",
-        "/images/noise-dark-3.jpg",
-        "/images/noise-dark-4.jpg",
-        "/images/noise-sleep-sun-1.png",
-        "/images/noise-sleep-sun-2.png",
-        "/images/noise-sleep-sun-3.png",
-        "/images/sun-separate-1.png",
-        "/images/sun-separate-2.png",
-        "/images/sun-separate-3.png",
-        "/images/right-hand-1.png",
-        "/images/right-hand-2.png",
-        "/images/right-hand-3.png",
-        "/images/left-hand-1.png",
-        "/images/left-hand-2.png",
-        "/images/left-hand-3.png",
+        "images/noise-dark-1.jpg",
+        "images/noise-dark-2.jpg",
+        "images/noise-dark-3.jpg",
+        "images/noise-dark-4.jpg",
+        "images/noise-sleep-sun-1.png",
+        "images/noise-sleep-sun-2.png",
+        "images/noise-sleep-sun-3.png",
+        "images/sun-separate-1.png",
+        "images/sun-separate-2.png",
+        "images/sun-separate-3.png",
+        "images/right-hand-1.png",
+        "images/right-hand-2.png",
+        "images/right-hand-3.png",
+        "images/left-hand-1.png",
+        "images/left-hand-2.png",
+        "images/left-hand-3.png",
     ];
 
     imagePaths.forEach((path) => {
@@ -28,14 +28,14 @@ window.onload = () => {
 
 /* background noise effect */
 
-const lightBackgrounds = ["/images/noise-light-1.jpg", "/images/noise-light-2.jpg", "/images/noise-light-3.jpg", "/images/noise-light-4.jpg"];
-const darkBackgrounds = ["/images/noise-dark-1.jpg", "/images/noise-dark-2.jpg", "/images/noise-dark-3.jpg", "/images/noise-dark-4.jpg"];
+const lightBackgrounds = ["images/noise-light-1.jpg", "images/noise-light-2.jpg", "images/noise-light-3.jpg", "images/noise-light-4.jpg"];
+const darkBackgrounds = ["images/noise-dark-1.jpg", "images/noise-dark-2.jpg", "images/noise-dark-3.jpg", "images/noise-dark-4.jpg"];
 let backgroundImgs = lightBackgrounds;
 let backgroundIndex = 0;
 const background = document.getElementById('background-img');
 
-const wakeSunImgs = ["/images/sun-separate-1.png", "/images/sun-separate-2.png", "/images/sun-separate-3.png"]
-const sleepSunImgs = ["/images/noise-sleep-sun-1.png", "/images/noise-sleep-sun-2.png", "/images/noise-sleep-sun-3.png"];
+const wakeSunImgs = ["images/sun-separate-1.png", "images/sun-separate-2.png", "images/sun-separate-3.png"]
+const sleepSunImgs = ["images/noise-sleep-sun-1.png", "images/noise-sleep-sun-2.png", "images/noise-sleep-sun-3.png"];
 let sunImgs = wakeSunImgs;
 let sunIndex = 0;
 const sun = document.getElementById('sun');
@@ -48,12 +48,12 @@ function loopSun() {
     sunIndex = (sunIndex + 1) % sunImgs.length;
     sun.src = sunImgs[sunIndex];
 }
-const emotionsImgs = ["/images/emotions-1.png", "/images/emotions-2.png", "/images/emotions-3.png"];
-const immunityImgs = ["/images/immunity-1.png", "/images/immunity-2.png", "/images/immunity-3.png"];
-const memoryImgs = ["/images/memory-1.png", "/images/memory-2.png", "/images/memory-3.png"];
-const metabolismImgs = ["/images/metabolism-1.png", "/images/metabolism-2.png", "/images/metabolism-3.png"];
-const focusImgs = ["/images/focus-1.png", "/images/focus-2.png", "/images/focus-3.png"];
-const creativityImgs = ["/images/creativity-1.png", "/images/creativity-2.png", "/images/creativity-3.png"];
+const emotionsImgs = ["images/emotions-1.png", "images/emotions-2.png", "images/emotions-3.png"];
+const immunityImgs = ["images/immunity-1.png", "images/immunity-2.png", "images/immunity-3.png"];
+const memoryImgs = ["images/memory-1.png", "images/memory-2.png", "images/memory-3.png"];
+const metabolismImgs = ["images/metabolism-1.png", "images/metabolism-2.png", "images/metabolism-3.png"];
+const focusImgs = ["images/focus-1.png", "images/focus-2.png", "images/focus-3.png"];
+const creativityImgs = ["images/creativity-1.png", "images/creativity-2.png", "images/creativity-3.png"];
 
 const emotions = document.getElementById('emotions');
 const immunity = document.getElementById('immunity');
@@ -73,8 +73,8 @@ function loopText() {
     creativity.src = creativityImgs[textIndex];
 }
 
-const leftHandImgs = ["/images/left-hand-1.png", "/images/left-hand-2.png", "/images/left-hand-3.png"];
-const rightHandImgs = ["/images/right-hand-1.png", "/images/right-hand-2.png", "/images/right-hand-3.png"];
+const leftHandImgs = ["images/left-hand-1.png", "images/left-hand-2.png", "images/left-hand-3.png"];
+const rightHandImgs = ["images/right-hand-1.png", "images/right-hand-2.png", "images/right-hand-3.png"];
 
 const leftHand = document.getElementById('left-hand');
 const rightHand = document.getElementById('right-hand');
@@ -86,7 +86,7 @@ function loopHands() {
     rightHand.src = rightHandImgs[handIndex];
 }
 
-const sleepHealsImgs = ["/images/sleep-heals-1.png", "/images/sleep-heals-2.png"];
+const sleepHealsImgs = ["images/sleep-heals-1.png", "images/sleep-heals-2.png"];
 
 const sleepHeals = document.getElementById('sleep-heals');
 let sleepHealsIndex = 0;
@@ -108,10 +108,10 @@ const txtBtn = document.getElementById('txt-btn');
 const textImgs = document.querySelectorAll('.text-img');
 const textLinks = document.querySelectorAll('.img-link');
 const eyeHighlights = document.getElementById('eye-highlights');
-const redSleep = "/images/red-sleep.png";
-const whiteSleep = "/images/white-sleep.png";
-const redWake = "/images/red-wake.png";
-const whiteWake = "/images/white-wake.png";
+const redSleep = "images/red-sleep.png";
+const whiteSleep = "images/white-sleep.png";
+const redWake = "images/red-wake.png";
+const whiteWake = "images/white-wake.png";
 sleep = false;
 
 txtBtn.addEventListener('mouseenter', () => {
@@ -132,7 +132,7 @@ txtBtn.addEventListener('mouseleave', () => {
 
 txtBtn.addEventListener('click', () => { 
     if (sleep) {
-        sun.src = "/images/sun-separate-1.png";
+        sun.src = "images/sun-separate-1.png";
         sunImgs = wakeSunImgs;
         txtBtn.src = whiteSleep;
         txtBtn.classList.remove('wake');
@@ -157,14 +157,14 @@ txtBtn.addEventListener('click', () => {
         document.body.style.backgroundColor = '#826f7b';
         setTimeout(() => {
             backgroundImgs = lightBackgrounds;
-            background.src = "/images/noise-light-1.jpg";
+            background.src = "images/noise-light-1.jpg";
             backgroundInterval = setInterval(loopBackground, 150);
             background.style.opacity = 1;
         }, 300);
 
         sleep = false;
     } else {
-        sun.src = "/images/noise-sleep-sun-1.png";
+        sun.src = "images/noise-sleep-sun-1.png";
         sunImgs = sleepSunImgs;
         txtBtn.src = whiteWake;
         txtBtn.classList.remove('sleep');
@@ -193,7 +193,7 @@ txtBtn.addEventListener('click', () => {
         document.body.style.backgroundColor = '#251f23';
         setTimeout(() => {
             backgroundImgs = darkBackgrounds;
-            background.src = "/images/noise-dark-1.jpg";
+            background.src = "images/noise-dark-1.jpg";
             backgroundInterval = setInterval(loopBackground, 175);
             background.style.opacity = 1;
         }, 300);
