@@ -1,19 +1,17 @@
 # sleep heals
 
-An interactive art piece about sleep, disguised as a little website.
+A little website about sleep. Everything on the page is hand-drawn — the sun, the hands, the eyes, the words, the background texture, even the cursors. The frames cycle so it feels a bit alive: the sun wobbles, the hands drift, the eyes follow your mouse.
 
-Every image on the page — the sun, the hands, the eyes, the hand-lettered words, the grainy backgrounds, even the cursors — was drawn by hand. The site stitches those drawings together into a loose flipbook: frames cycle, the sun breathes, the hands drift, the pupils follow your mouse around the room.
+## How it works
 
-## Two states
+Click the word on the sun's face to flip between **wake** and **sleep**.
 
-Click the word in the center of the sun's face to toggle between **wake** and **sleep**.
-
-- **Wake** — warm palette, eyes open, hands up. Six hand-drawn words float into view around the sun — *emotions, creativity, focus, memory, immunity, metabolism* — each one linking out to a study about what sleep does for it.
-- **Sleep** — cool palette, eyes closed, the words fade away. The sun rests.
+- **Wake** — warm colors, eyes open, hands up. Six words float in around the sun (*emotions, creativity, focus, memory, immunity, metabolism*). Each one links to a study about what sleep does for it.
+- **Sleep** — cool colors, eyes closed, the words fade out.
 
 ## Running it
 
-It's a plain static site — no build step, no dependencies. Open `index.html` in a browser, or serve the folder:
+Plain static site, no build step, no dependencies. Open `index.html` in a browser, or serve the folder:
 
 ```
 python3 -m http.server
@@ -21,4 +19,4 @@ python3 -m http.server
 
 ## Credits
 
-Drawings, writing, and code by Grace Juan. Typeface *Meno Display* via Adobe Fonts. Research links point to PubMed, Nature, and JAMA.
+Drawings, writing, and code by Grace Juan. Font is *Meno Display* via Adobe Fonts. Study links go to PubMed, Nature, and JAMA.
