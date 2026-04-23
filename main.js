@@ -16,6 +16,12 @@ window.onload = () => {
         "images/left-hand-1.png",
         "images/left-hand-2.png",
         "images/left-hand-3.png",
+        "images/sleep-heals-2.png",
+        "images/red-wake.png",
+        "images/white-sleep.png",
+        "images/white-wake.png",
+        "images/cursor-green.png",
+        "images/glove-cursor-1.png",
     ];
 
     imagePaths.forEach((path) => {
@@ -112,7 +118,7 @@ const redSleep = "images/red-sleep.png";
 const whiteSleep = "images/white-sleep.png";
 const redWake = "images/red-wake.png";
 const whiteWake = "images/white-wake.png";
-sleep = false;
+let sleep = false;
 
 txtBtn.addEventListener('mouseenter', () => {
     if (sleep) {
